@@ -3,10 +3,12 @@ var bbs = function(opt)
     this.options = {
         apis : {
             $documents_wrap   : {},    //출력된 데이터를 뿌려주기 위한 부모 태그
+            $main_form        : {},    //메인 출력글을 입력하는 폼태그를 설정 합니다.
             get               : '',    //bbs 데이터를 가져올 주소를 입력 합니다.
             insert            : '',    //bbs 데이터를 등록할 주소를 입력 합니다.
             delete            : '',    //bbs 게시글을 삭제할 주소를 입력 합니다.
             update            : ''     //bbs 게시글을 수정할 주소를 입력 합니다.
+
         }
     }
     $.extend(this.options,opt);
