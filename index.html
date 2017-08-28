@@ -6,14 +6,24 @@
     <script src="jquery/dist/jquery.js"></script>
     <script src="handlebars/handlebars.js"></script>
     <script src="js/bbs_v1.js"></script>
-    <script>
-        var $bbs = new bbs({
-            get : 'http://my.conects.com/course/bbs/document_get'
-        });
 
-    </script>
 </head>
 <body>
 
+<form action="" class="main_form">
+    <input type="text" name="title">
+</form>
+<script>
+    var $bbs = new bbs({
+        $main_form : $('.main_form'),
+        get : 'http://my.conects.com/course/bbs/document_get'
+    });
+    $bbs.set(function(forms){
+
+//        return true;
+    },function(data){
+        console.log(data)
+    });
+</script>
 </body>
 </html>

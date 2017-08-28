@@ -23,7 +23,7 @@ ST UNITAS 에서 사용되는 BBS 라이브러리 JAVASCRIPT 입니다
 ### 2. bbs.set (check,callback);
 
 <pre>
- check         : 함수내에서 폼 검증을 실행 할 수 있습니다. 함수 종료시에는 반드시 boolen값을 리턴해야 합니다.
+ check         : 함수내 에서 폼 검증을 실행 할 수 있습니다. 함수 종료시에는 반드시 boolen값을 리턴해야 합니다.
  callback      : 데이터가 등록 된 후에, 리턴받은 데이터를 처리 하는 함수 입니다.
 </pre>
 <pre>
@@ -41,8 +41,3 @@ ST UNITAS 에서 사용되는 BBS 라이브러리 JAVASCRIPT 입니다
 </code>
 </pre>
 본 함수는 document 정보를 저장하여 입력하고, 저장된 결과값으로 컨트롤 하는 기능을 가지고 있습니다.
- 
- 
- 
-   
-
