@@ -13,20 +13,15 @@ var bbs = function(opt)
 }
 
 bbs.prototype = {
-    get : function(offset, limit, extra_param1, extra_param2, extra_param3)
+    get : function(offset, limit, add_options)
     {
         var _server_data = {};
         _server_data.offset = 0 | offset;
         _server_data.limit = 15 | limit;
-        if( extra_param1 ) {
-            _server_data.extra_param1 = extra_param1;
+        if( add_options ) {
+            $.extend(_server_data,add_options);
         }
-        if( extra_param2 ) {
-            _server_data.extra_param1 = extra_param2;
-        }
-        if( extra_param3 ) {
-            _server_data.extra_param1 = extra_param3;
-        }
+        console.log(_server_data);
         return $.getJSON(this.options.get,_server_data,function(documents){});
     }
     ,insert : function(){}
