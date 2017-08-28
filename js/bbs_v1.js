@@ -51,11 +51,25 @@ bbs.prototype = {
 }
 
 // 게시글 입니다
-var document = function()
+// 도쿠먼트 객체는
+var document = function($option)
 {
-    this.document_srl = '';
-    this.title        = '';
-    this.content      = '';
+
+    //입력 받아야 하는 옵션들
+    this.item = {};
+    this.item.document_srl      = '';
+    this.item.point             = {};
+    this.item.user_profile_pic  = '';
+    this.item.user_id           = '';
+    this.item.user_name         = '';
+    this.item.is_best           = false;
+    this.item.title             = '';
+    this.item.content           = '';
+    this.item.status            = '';
+    this.item.comment_status    = '';
+    this.item.regdate           = '';
+    this.item.view_date         = '';
+    this.me                     = {};
 
 
 }
