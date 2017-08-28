@@ -23,14 +23,36 @@ bbs.prototype = {
         if( add_options ) {
             $.extend(_server_data,add_options);
         }
-        console.log(_server_data);
         return $.getJSON(this.options.get,_server_data,function(documents){});
     }
-    ,insert : function(){}
+    ,set : function(checker , callback)
+    {
+        var save_data = false,
+            $form = this.apis.$main_form;
+        //사용자 체크 function이 설정 되었다면, 체크 해서 리턴값을 가지고 저장 유무를 지정한다.
+        if( typeof checker === 'function' ) {
+            save_data = checker($form[0]);
+        } else {
+            save_data = true;
+        }
+
+        if ( save_data === true ) {
+            return $.post(this.options.apis.insert,$form.serializeArray(),function(document){
+                if( typeof document === 'function')
+                {
+                    callback(document);
+                }
+            });
+        } else {
+            alert('데이터를 저장 할 수 없습니다');
+            return false;
+        }
+
+    }
 }
 
 // 게시글 입니다
-var document = function()
+bbs.document = function()
 {
     this.document_srl = '';
     this.title        = '';
@@ -38,11 +60,6 @@ var document = function()
 
 
 }
-document.prototype = {
-
-}
-var comment = function()
-{
-
-}
-document.prototype = {}
+bbs.document.prototype = {}
+bbs.comment = function() {}
+bbs.comment.prototype = {}
