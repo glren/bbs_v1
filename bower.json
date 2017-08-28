@@ -1,0 +1,13 @@
+{
+  "name": "bbs_1",
+  "homepage": "https://github.com/glren/bbs_v1",
+  "authors": [
+    "chltmdfyd@nate.com"
+  ],
+  "description": "manage st unitas bbs.",
+  "main": "",
+  "license": "MIT",
+  "dependencies": {
+    "handlebars": "^4.0.10"
+  }
+}
